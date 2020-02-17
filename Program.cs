@@ -124,7 +124,6 @@ namespace Assignment
             drive dr = new drive("Evening");
             lv.display();
             lv.disply(dr);
-            // dr.timing();
             tr.timing();
             en.display();
             ac.display();
