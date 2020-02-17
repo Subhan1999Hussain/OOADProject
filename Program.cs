@@ -4,8 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOAD_TASK
+namespace Assignment
 {
+    class Engine
+    {
+        protected int number_of_engine;
+        public Engine(int number)
+        {
+            this.number_of_engine = number;
+        }
+        public void display()
+        {
+            Console.WriteLine("The number of engine : " + number_of_engine);
+        }
+
+    }
+    class AC
+    {
+        protected int number_of_ac;
+        public AC(int number)
+        {
+            this.number_of_ac = number;
+        }
+        public void display()
+        {
+            Console.WriteLine("The number of AC : " + number_of_ac);
+        }
+    }
     abstract class Vehicle
     {
         protected Engine eng0;
@@ -37,8 +62,8 @@ namespace OOAD_TASK
         }
         public override void display()
         {
-            Console.WriteLine("Number of engine in car :" + eng0);
-            Console.WriteLine("Number of ac in car: " + ac0);
+            Console.WriteLine("the number of engine in car :" + eng0);
+            Console.WriteLine("the number of ac in car: " + ac0);
         }
 
 
@@ -53,37 +78,10 @@ namespace OOAD_TASK
         }
         public override void display()
         {
-            Console.WriteLine("Number of engine in car :" + eng0);
-            Console.WriteLine("Number of ac in car: " + ac0);
+            Console.WriteLine("the number of engine in car :" + eng0);
+            Console.WriteLine("the number of ac in car: " + ac0);
         }
     }
-    class Engine
-    {
-        protected int number_of_engine;
-        public Engine(int number)
-        {
-            number_of_engine = number;
-        }
-        public void display()
-        {
-            Console.WriteLine("Number of engine : " + number_of_engine);
-        }
-
-    }
-    class AC
-    {
-        protected int number_of_ac;
-        public AC(int number)
-        {
-            this.number_of_ac = number;
-        }
-        public void display()
-        {
-            Console.WriteLine("Number of AC : " + number_of_ac);
-        }
-    }
-    
-    
     public class drive
     {
         protected string drive_slot;
@@ -95,7 +93,7 @@ namespace OOAD_TASK
         }
         public virtual void timing()
         {
-            Console.WriteLine("Slot of driving is : " + drive_slot);
+            Console.WriteLine("The slot of driving is : " + drive_slot);
         }
 
     }
@@ -109,30 +107,45 @@ namespace OOAD_TASK
         }
         public override void timing()
         {
-            Console.WriteLine("Slot of driving is : " + drive_slot);
-            Console.WriteLine("Complete trips are  : " + trips);
+            Console.WriteLine("The slot of driving is : " + drive_slot);
+            Console.WriteLine("The Complete trips are  : " + trips);
         }
+
 
     }
     class Program
     {
-        //Name: Subhan Hussain
-        //SID : 9315
         static void Main(string[] args)
         {
-            Engine en = new Engine(3);
+            Engine en = new Engine(1);
             AC ac = new AC(2);
             LandVehicle lv = new LandVehicle(en, ac, 2);
-            trip tr = new trip("Morning", 7);
+            trip tr = new trip("Morning", 3);
             drive dr = new drive("Evening");
             lv.display();
             lv.disply(dr);
-            dr.timing();
+            // dr.timing();
             tr.timing();
             en.display();
             ac.display();
             Console.ReadLine();
-        }
 
+
+
+
+
+
+
+
+
+        }
     }
 }
+
+
+
+
+
+
+
+
